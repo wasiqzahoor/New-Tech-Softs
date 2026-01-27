@@ -113,7 +113,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <FaWhatsapp className="text-cyan-400" />
-                <a href="tel:+923415287464" className="text-sm hover:text-cyan-400 transition">+92 3415287464</a>
+                <a href="https://wa.me/923415287464" className="text-sm hover:text-cyan-400 transition">+923415287464</a>
               </li>
             </ul>
             
