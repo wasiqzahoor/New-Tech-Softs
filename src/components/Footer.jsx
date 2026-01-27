@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram,FaWhatsapp, FaSpinner,FaCheckCircle, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaSpinner,FaCheckCircle, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 import logo from '../assets/logo.png'; // Make sure path sahi ho
 
 const Footer = () => {
