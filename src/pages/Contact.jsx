@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { 
-  FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedin, 
+  FaEnvelope, FaWhatsapp, FaMapMarkerAlt, FaLinkedin, 
   FaFacebook, FaInstagram, FaPaperPlane, FaGlobeAmericas, 
   FaShieldAlt, FaRocket, FaSpinner 
 } from 'react-icons/fa';
@@ -83,7 +83,7 @@ const Contact = () => {
             <h2 className="text-3xl font-bold border-l-4 border-cyan-500 pl-6 uppercase tracking-tighter">Information</h2>
             
             <ContactDetail icon={<FaEnvelope />} label="Email our team" value="info@newtechsofts.com" />
-            <ContactDetail icon={<FaPhoneAlt />} label="Connect with us" value="+923415287464" />
+            <ContactDetail icon={<FaWhatsapp />} label="Connect with us" value="+923415287464" />
             <ContactDetail icon={<FaMapMarkerAlt />} label="Our Headquarters" value="DHA Phase 5 Sector H, Islamabad" />
           </div>
 

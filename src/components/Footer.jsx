@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaSpinner,FaCheckCircle, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaInstagram,FaWhatsapp, FaSpinner,FaCheckCircle, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 import logo from '../assets/logo.png'; // Make sure path sahi ho
 
 const Footer = () => {
@@ -112,8 +112,8 @@ const Footer = () => {
                 <a href="mailto:info@newtechsofts.com" className="text-sm hover:text-cyan-400 transition">info@newtechsofts.com</a>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhone className="text-cyan-400" />
-                <a href="tel:+923415287464" className="text-sm hover:text-cyan-400 transition">+92 3029464542</a>
+                <FaWhatsapp className="text-cyan-400" />
+                <a href="tel:+923415287464" className="text-sm hover:text-cyan-400 transition">+92 3415287464</a>
               </li>
             </ul>
             
