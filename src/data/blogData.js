@@ -48,5 +48,25 @@ export const blogData = [
   "author": "NTS Design Team",
   "img": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200",
   "category": "Design"
+},
+{
+  "id": 6,
+  "title": "AI-First Web Development: Revolutionizing Business Apps in 2026",
+  "excerpt": "Is your website just a digital brochure or a smart business engine? Explore how AI-driven web applications are redefining user experience and operational efficiency for modern startups.",
+  "content": "In 2026, the digital landscape has shifted from static websites to intelligent, self-optimizing web applications. At New Tech Softs, we believe that an AI-First approach is no longer optional—it is a competitive necessity. By integrating Large Language Models (LLMs) and predictive analytics directly into the MERN stack, we create platforms that don't just display information but actively interact with users. Key benefits include hyper-personalized user interfaces that adapt to visitor behavior, 24/7 intelligent customer support via advanced chatbots, and automated data processing that saves hundreds of manual work hours. Whether it is an e-commerce site predicting the next purchase or a SaaS platform automating complex workflows, AI-driven development ensures your business stays ahead of the curve. Our team specializes in bridging the gap between cutting-edge AI research and practical, scalable web solutions that drive real-world ROI. Don't just keep up with the future; lead it with New Tech Softs.",
+  "date": "February 2, 2026",
+  "author": "Wasiq Zahoor",
+  "img": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&h=800&auto=format&fit=crop",
+  "category": "AI & Web Dev"
+},
+{
+  "id": 7,
+  "title": "Why Cross-Platform Apps are the Best Choice for Startups in 2026",
+  "excerpt": "Build once, deploy everywhere. Discover why Flutter and React Native are the ultimate tools for startups looking to dominate both iOS and Android markets on a budget.",
+  "content": "In the highly competitive market of 2026, speed to market is everything. For startups, the debate between Native and Cross-Platform development has been settled: Cross-platform wins. At New Tech Softs, we specialize in leveraging frameworks like Flutter and React Native to build high-performance mobile applications that run seamlessly on both iOS and Android using a single codebase. This approach doesn't just reduce development costs by up to 40%; it also ensures that your brand provides a consistent user experience across all devices. Modern cross-platform tools now offer 'native-like' performance, meaning your users won't feel the difference, but your budget certainly will. Our development process focuses on UI/UX excellence and robust backend integration, ensuring your app is scalable from its first thousand users to its first million. If you're looking to launch a powerful mobile solution without the double overhead of native teams, New Tech Softs is your strategic partner in digital mobility.",
+  "date": "February 2, 2026",
+  "author": "NTS Tech Team",
+  "img": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&h=800&auto=format&fit=crop",
+  "category": "Mobile Apps"
 }
 ];
