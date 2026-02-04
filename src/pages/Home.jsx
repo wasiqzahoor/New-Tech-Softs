@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaRocket, FaCode, FaLaptopCode, FaMobileAlt, FaReact, FaNodeJs, FaPython, FaCheckCircle, FaAndroid, FaVuejs, FaHtml5, FaCss3Alt, FaJsSquare, FaPhp, FaJava, FaSwift, FaAws, FaDocker, FaGitAlt,FaClock, FaGem, FaHeadset } from 'react-icons/fa';
 import { SiFlutter, SiMongodb, SiMysql, SiFirebase, SiNextdotjs, SiTailwindcss, SiDjango, SiPostgresql } from 'react-icons/si';
 import { motion,AnimatePresence } from 'framer-motion';
+import Reviews from '../components/Reviews';
 // --- ANIMATION VARIANTS (Settings) ---
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -460,6 +461,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Reviews/>
 {/* --- CALL TO ACTION (CTA) SECTION --- */}
 <section className="py-24 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a3c5a] relative overflow-hidden">
   
@@ -519,6 +521,8 @@ const Home = () => {
   {/* Bottom subtle border/line */}
   <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
 </section>
+
+
     </div>
   );
 };
