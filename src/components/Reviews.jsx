@@ -5,7 +5,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  const API_URL = "http://localhost:5000/api/reviews"; 
+  const API_URL = "https://new-tech-softs-backend.onrender.com"; 
 
   const [newReview, setNewReview] = useState({
     name: '',
