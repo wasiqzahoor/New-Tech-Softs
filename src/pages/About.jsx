@@ -9,6 +9,7 @@ import {
   FaBezierCurve,
   FaCode,
   FaPalette,
+  FaProjectDiagram,
   FaCheckCircle,
   FaMobileAlt,
   FaTerminal,
@@ -48,6 +49,30 @@ const About = () => {
       insta: "https://www.instagram.com/ch_wiqii?igsh=MTB6bDgwYXptbzh3bQ==" 
     }
   },
+  {
+  name: "Nafeesa Arshad", 
+  role: "Project Manager", 
+  desc: "An experienced project manager leading teams with strategic vision, ensuring timely delivery, efficient workflows, and successful execution of high-quality digital projects.",
+  img: image3,
+  icon: <FaProjectDiagram />, 
+  social: { 
+    linkedin: "https://www.linkedin.com/in/nafeesa-arshad-4235a1364/", 
+    github: "https://github.com/nafeesaawan", 
+    insta: "https://www.instagram.com/" 
+  }
+},
+{ 
+  name: "Warda Riffat",  
+  role: "Full Stack Web Developer",  
+  desc: "A skilled full stack developer proficient in building scalable web applications, handling both frontend and backend development with a focus on performance, security, and seamless user experience.",
+  img: image5,
+  icon: <FaCode />, 
+  social: { 
+    linkedin: "www.linkedin.com/in/warda-riffat-556731317", 
+    github: "https://github.com/", 
+    insta: "https://www.instagram.com/" 
+  }
+},
  {
   name: "Muhammad Musa",
   role: "AI Engineer",
