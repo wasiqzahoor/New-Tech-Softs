@@ -68,5 +68,35 @@ export const blogData = [
   "author": "NTS Tech Team",
   "img": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&h=800&auto=format&fit=crop",
   "category": "Mobile Apps"
-}
+},
+{
+    id: 8,
+    title: "Optimizing Web Performance: A Developer's Guide to 2026 Standards",
+    excerpt: "Learn the latest techniques to improve your website's Core Web Vitals and user experience in the competitive landscape of 2026.",
+    content: "In 2026, web performance is no longer a luxury; it's a fundamental requirement. Google's Core Web Vitals have made speed, responsiveness, and visual stability critical for ranking. At New Tech Softs, we emphasize optimized rendering, efficient code splitting, and lazy loading strategies to ensure your applications load in milliseconds. We prioritize minimizing main-thread work and leveraging modern browser caching techniques to keep bounce rates low and engagement high. Whether your platform is a heavy e-commerce site or a lean SaaS tool, our performance-focused approach ensures that your users enjoy a seamless experience on any device. Don't let slow load times hold your business back; optimize now to stay ahead of the curve.",
+    date: "April 22, 2026",
+    author: "Wasiq Zahoor",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    category: "Web Dev"
+  },
+  {
+    id: 9,
+    title: "Why Custom Software Solutions are the Catalyst for Modern Business Growth",
+    excerpt: "Off-the-shelf software doesn't always cut it. Discover how tailored enterprise solutions can streamline your operations and drive scaling.",
+    content: "Modern businesses face unique challenges that generic software can't resolve. New Tech Softs offers custom software development designed specifically around your operational workflow. By replacing outdated processes with bespoke, scalable architecture, we empower businesses to automate repetitive tasks, improve data security, and make faster, data-driven decisions. Custom solutions aren't just about functionality; they're about competitive advantage. We integrate secure, robust backends with user-friendly frontends to streamline your customer journey. If you're serious about long-term growth and digital dominance, investing in custom-built infrastructure is the most strategic move you can make in 2026.",
+    date: "April 21, 2026",
+    author: "Wasiq Zahoor",
+    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    category: "Corporate"
+  },
+  {
+    id: 10,
+    title: "Securing Your Digital Presence: Essential Cybersecurity Best Practices for 2026",
+    excerpt: "With cyber threats evolving, ensuring robust security for your business applications is vital. Get actionable insights to protect your digital assets.",
+    content: "As digital integration deepens, so do cybersecurity risks. Protecting your customers' data is paramount to maintaining trust and business continuity. At New Tech Softs, security is embedded in our development lifecycle. We utilize robust encryption, implement secure authentication protocols, and conduct regular penetration testing on our deployments to identify potential vulnerabilities. In 2026, security is not just an add-on; it's a core component of sustainable development. By following rigorous secure coding standards, we ensure that your software is protected against common injection attacks and data breaches. Don't wait for a security incident to realize the importance of robust protection; take proactive steps with New Tech Softs today.",
+    date: "April 20, 2026",
+    author: "Wasiq Zahoor",
+    img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800",
+    category: "Security"
+  }
 ];

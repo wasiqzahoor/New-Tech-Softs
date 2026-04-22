@@ -92,8 +92,8 @@ const Contact = () => {
             <h3 className="text-xl font-bold text-cyan-400 uppercase tracking-widest">Global Connect</h3>
             <div className="flex gap-6">
               <SocialIcon icon={<FaLinkedin />} link="https://www.linkedin.com/company/newtechsofts" />
-              <SocialIcon icon={<FaFacebook />} link="https://www.facebook.com/share/17a4ioveu7/" />
-              <SocialIcon icon={<FaInstagram />} link="https://www.instagram.com/newtechsofts?igsh=aTR3Y2x3eHFxMXdu" />
+              <SocialIcon icon={<FaFacebook />} link="https://www.facebook.com/newtechsofts/" />
+              <SocialIcon icon={<FaInstagram />} link="https://www.instagram.com/newtechsoft/" />
             </div>
           </div>
 

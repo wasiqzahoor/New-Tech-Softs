@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { FaRocket, FaCode, FaLaptopCode, FaMobileAlt, FaReact, FaNodeJs, FaPython, FaCheckCircle, FaAndroid, FaVuejs, FaHtml5, FaCss3Alt, FaJsSquare, FaPhp, FaJava, FaSwift, FaAws, FaDocker, FaGitAlt,FaClock, FaGem, FaHeadset } from 'react-icons/fa';
 import { SiFlutter, SiMongodb, SiMysql, SiFirebase, SiNextdotjs, SiTailwindcss, SiDjango, SiPostgresql } from 'react-icons/si';
 import { motion,AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Reviews from '../components/Reviews';
+import { blogData } from '../data/blogData';
+import HowWeWork from '../components/HowWeWork';
+import FAQs from '../components/FAQs';
 // --- ANIMATION VARIANTS (Settings) ---
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,11 +33,14 @@ const buttonVariants = {
 
 
 const Home = () => {
+  //Home component ke top par state add karein:
+const [isModalOpen, setIsModalOpen] = useState(false);
   const projectImages = [
-    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800',
+    'https://res.cloudinary.com/dwhj8qfca/image/upload/v1776867745/SS1_gyr3jr.png',
+    'https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1776867745/SS2_rqihi6.png',
+    'https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1776867746/SS3_bhi1nj.png',
+    'https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1776867746/SS4_pdxz4x.png',
+    'https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1776867746/SS5_i3i0vz.png',
   ];
 
   const [currentImg, setCurrentImg] = useState(0);
@@ -54,7 +61,7 @@ const Home = () => {
     }
   };
    // Typewriter Variants for Featured Project
-  const sentence = "Empowering businesses with cutting-edge software solutions and seamless user experiences.";
+  const sentence = " Struggling with system lag and frame drops? Our team developed BigLou's Optimizer to provide the ultimate PC performance boost. This advanced system utility is tailored to eliminate bottlenecks by lowering input latency and optimizing RAM and CPU allocation. Whether you're a competitive gamer or a power user, BigLou’s Optimizer fine-tunes your Windows OS, delivering the high-FPS, responsive, and seamless experience your setup deserves.";
   const words = sentence.split("");
 
   const typewriterContainer = {
@@ -66,9 +73,29 @@ const Home = () => {
     visible: { opacity: 1, x: 0, transition: { type: "spring", damping: 12, stiffness: 100 } },
     hidden: { opacity: 0, x: -10 },
   };
+ 
   return (
+    
     <div className="bg-gray-50 overflow-hidden">
-      
+       <Helmet>
+  <title>Best Software House in Islamabad | New Tech Softs</title>
+  <meta name="description" content="Looking for the top software house in Islamabad? New Tech Softs delivers custom web apps, professional web development, and digital solutions. Partner with a leading startup company today!" />
+{/* JSON-LD Structured Data */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareBusiness",
+      "name": "New Tech Softs",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Islamabad",
+        "addressCountry": "PK"
+      },
+      "url": "https://www.newtechsofts.com/",
+      "description": "Professional software house in Islamabad specializing in custom web apps and digital solutions."
+    })}
+  </script>
+</Helmet>
       {/* --- HERO SECTION --- */}
       <section className="relative bg-[#0a192f] text-white pt-32 pb-20 lg:pt-32 lg:pb-20 overflow-hidden">
         
@@ -140,7 +167,7 @@ const Home = () => {
                 </Link>
                 <Link to="/portfolio">
                   <button className="w-full sm:w-auto border-2 border-gray-600 text-gray-300 px-8 py-3.5 rounded-full font-bold text-lg hover:border-cyan-400 hover:text-cyan-400 transition flex items-center justify-center gap-2">
-                    <FaCode /> View Our Work
+                    <FaCode /> View Our Portfolio
                   </button>
                 </Link>
               </motion.div>
@@ -240,9 +267,9 @@ const Home = () => {
 </div>
 {/* --- WHY CHOOSE US SECTION --- */}
 
-<section className="py-24 bg-[#0d2b45] opacity-7 relative overflow-hidden">
+<section className="py-24 bg-[#0d2b45] relative overflow-hidden">
   
-  {/* Optional Background Pattern (Subtle) */}
+  {/* Background Pattern */}
   <div className="absolute top-0 right-0 opacity-20 pointer-events-none">
     <svg width="400" height="400" viewBox="0 0 100 100" className="fill-current text-cyan-500">
       <circle cx="80" cy="20" r="30" />
@@ -251,7 +278,7 @@ const Home = () => {
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
-    {/* Heading */}
+    {/* SEO-Friendly Heading */}
     <div className="text-center mb-16">
       <motion.h2 
         initial={{ opacity: 0, y: -50 }}
@@ -260,7 +287,7 @@ const Home = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="text-4xl md:text-5xl font-extrabold text-white tracking-tight"
       >
-        Why Choose <span className="text-cyan-400">New Tech Softs?</span>
+        Why Partner with <span className="text-cyan-400">New Tech Softs?</span>
       </motion.h2>
       <motion.p 
         initial={{ opacity: 0 }}
@@ -269,34 +296,34 @@ const Home = () => {
         transition={{ delay: 0.3 }}
         className="text-gray-300 mt-4 max-w-2xl mx-auto text-lg"
       >
-        We combine technical expertise with business intelligence to deliver results that matter.
+        As a leading software house in Islamabad, we bridge the gap between complex technology and business goals.
       </motion.p>
     </div>
 
-    {/* Cards Grid */}
+    {/* Cards Grid with Optimized Content */}
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       
-      {/* Card 1 */}
+      {/* Card 1: Fast Delivery (Agile Focused) */}
       <FeatureCard 
         icon={<FaClock />} 
-        title="Fast Delivery" 
-        desc="We respect your deadlines. Our agile workflow ensures rapid deployment without cutting corners."
+        title="Agile Delivery" 
+        desc="We prioritize speed and transparency. Our agile development methodology ensures your custom software projects are delivered on time without compromising quality."
         delay={0}
       />
 
-      {/* Card 2 */}
+      {/* Card 2: Premium Quality (Architecture Focused) */}
       <FeatureCard 
         icon={<FaGem />} 
-        title="Premium Quality" 
-        desc="Scalable architecture and clean code that ensures your software runs smoothly for years."
+        title="Scalable Architecture" 
+        desc="Our developers build secure, clean-code software solutions designed to scale alongside your business growth, ensuring long-term performance and reliability."
         delay={0.2}
       />
 
-      {/* Card 3 */}
+      {/* Card 3: 24/7 Support (Client Focused) */}
       <FeatureCard 
         icon={<FaHeadset />} 
-        title="24/7 Support" 
-        desc="Our team is always available to resolve issues and keep your business running uninterrupted."
+        title="Dedicated Expert Support" 
+        desc="Your success is our priority. We offer 24/7 maintenance and technical support to keep your digital infrastructure running efficiently and uninterrupted."
         delay={0.4}
       />
 
@@ -305,103 +332,100 @@ const Home = () => {
 </section>
       {/* --- SERVICES PREVIEW (Cards) --- */}
 <section className="py-24 bg-[#1a3c5a] relative overflow-hidden">
-      {/* Background Decorative Elements (Optional) */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      </div>
+  <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+  </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Heading Section */}
-        <div className="text-center mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-extrabold text-white tracking-tight"
-          >
-            Our Core <span className="text-cyan-400">Expertise</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-gray-300 mt-6 max-w-2xl mx-auto text-lg leading-relaxed"
-          >
-           End-to-end digital solutions designed to scale your business in the modern economy.
-          </motion.p>
-        </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    {/* SEO-Friendly Heading */}
+    <div className="text-center mb-20">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+      >
+        Our Premium <span className="text-cyan-400">Services & Expertise</span>
+      </motion.h2>
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="text-gray-300 mt-6 max-w-2xl mx-auto text-lg leading-relaxed"
+      >
+        As a leading software house, we deliver end-to-end digital business solutions tailored to scale your operations in the modern competitive economy.
+      </motion.p>
+    </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          
-          {/* 1. Web Development */}
-          <ServiceCard 
-            icon={<FaLaptopCode />} 
-            title="Web Development"
-            tagline="Digital Foundations" 
-            desc="We architect robust, scalable, and high-performance web applications using MERN Stack and Next.js that drive user engagement and business growth."
-            direction="left"
-            delay={0.1}
-          />
+    {/* Services Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+      {/* 1. Web Development */}
+      <ServiceCard 
+        icon={<FaLaptopCode />} 
+        title="Web Development Services"
+        tagline="Robust Digital Foundations" 
+        desc="We architect robust, scalable, and high-performance web applications using modern technologies like MERN Stack and Next.js, ensuring your business stays ahead."
+        direction="left"
+        delay={0.1}
+      />
 
-          {/* 2. App Development */}
-          <ServiceCard 
-            icon={<FaMobileAlt />} 
-            title="App Development" 
-            tagline="Mobile Innovation"
-            desc="Native and cross-platform mobile solutions (Flutter/React Native) that deliver seamless user experiences across iOS and Android ecosystems."
-            direction="up"
-            delay={0.3}
-          />
+      {/* 2. App Development */}
+      <ServiceCard 
+        icon={<FaMobileAlt />} 
+        title="Mobile App Development" 
+        tagline="Mobile-First Innovation"
+        desc="We build custom native and cross-platform mobile apps (Flutter/React Native) that deliver seamless, intuitive user experiences for both iOS and Android."
+        direction="up"
+        delay={0.3}
+      />
 
-          {/* 3. Digital Transformation */}
-          <ServiceCard 
-            icon={<FaRocket />} 
-            title="Digital Solutions" 
-            tagline="Scale Beyond Limits"
-            desc="Comprehensive digital strategies including UI/UX Design, SEO, and Cloud Integration to modernize your operations and boost visibility."
-            direction="right"
-            delay={0.5}
-          />
-
-        </div>
-        
-        {/* View All Button */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-          className="mt-20 text-center"
-        >
-          <Link to="/services">
-            <button className="group relative bg-transparent border-2 border-cyan-500 text-cyan-400 px-10 py-4 rounded-full font-bold text-lg hover:bg-cyan-500 hover:text-[#0a192f] transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 flex items-center gap-3 mx-auto">
-              View All Solutions
-              <span className="transform group-hover:translate-x-2 transition-transform duration-300">&rarr;</span>
-            </button>
-          </Link>
-        </motion.div>
-
-      </div>
-    </section>
+      {/* 3. Digital Transformation */}
+      <ServiceCard 
+        icon={<FaRocket />} 
+        title="Digital Transformation" 
+        tagline="Scale Beyond Limits"
+        desc="Unlock growth with comprehensive digital strategies, expert UI/UX design, professional SEO, and secure Cloud Integration to modernize your enterprise."
+        direction="right"
+        delay={0.5}
+      />
+    </div>
+    
+    {/* CTA Button */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.8 }}
+      className="mt-20 text-center"
+    >
+      <Link to="/services">
+        <button className="group relative bg-transparent border-2 border-cyan-500 text-cyan-400 px-10 py-4 rounded-full font-bold text-lg hover:bg-cyan-500 hover:text-[#0a192f] transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 flex items-center gap-3 mx-auto">
+          Explore All Our Development Services
+          <span className="transform group-hover:translate-x-2 transition-transform duration-300">&rarr;</span>
+        </button>
+      </Link>
+    </motion.div>
+  </div>
+</section>
     {/* --- Featured Projects --- */}
-    <section className="py-24 bg-[#214769] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-extrabold text-white tracking-tight"
-            >
-              Innovation in <span className="text-cyan-400">Action</span>
-            </motion.h2>
-            <motion.p 
+  <section className="py-24 bg-[#214769] overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-20">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+      >
+        Innovation in <span className="text-cyan-400">Action</span>
+      </motion.h2>
+       <motion.p 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -410,58 +434,145 @@ const Home = () => {
             >
               Take a look at how we transform complex business challenges into intuitive digital success stories.
             </motion.p>
+    </div>
+    
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Left: Image Slider */}
+      <div className="relative w-full aspect-video rounded-3xl overflow-hidden border-4 border-cyan-500/20 shadow-2xl">
+        <AnimatePresence mode='wait'>
+          <motion.img
+            key={currentImg}
+            src={projectImages[currentImg]}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 w-full h-full object-contain"
+            alt="Custom Web App Development by New Tech Softs in Islamabad"
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Right: Content */}
+      <div className="space-y-6">
+        <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+          <h3 className="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">Success Story</h3>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            BigLou's <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Optimizer</span>
+          </h2>
+        </motion.div>
+        <motion.div variants={typewriterContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-gray-200 text-lg leading-relaxed max-w-xl min-h-[80px]">
+            {words.map((char, index) => (
+              <motion.span key={index} variants={typewriterChild}>{char}</motion.span>
+            ))}
+          </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }}>
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-cyan-500 text-[#0a192f] px-10 py-4 rounded-xl font-black text-lg hover:shadow-[0px_0px_20px_rgba(34,211,238,0.4)] transition-all"
+          >
+            View Detailed Case Study →
+          </button>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+
+  {/* Modal Popup */}
+  <AnimatePresence>
+    {isModalOpen && (
+      <motion.div 
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      >
+        <motion.div 
+          className="bg-[#112240] p-8 rounded-3xl max-w-3xl w-full border border-cyan-500/50 shadow-2xl relative"
+          initial={{ scale: 0.8 }} animate={{ scale: 1 }} exit={{ scale: 0.8 }}
+        >
+          <button onClick={() => setIsModalOpen(false)} className="absolute top-4 right-6 text-white text-3xl">&times;</button>
+          <h2 className="text-3xl font-bold text-white mb-6">BigLou's Optimizer: In-Depth</h2>
+          <div className="text-gray-300 space-y-4 max-h-[60vh] overflow-y-auto pr-4">
+            <p>BigLou's Optimizer is a complete system overhaul utility developed by New Tech Softs. Our solution addresses core Windows bottlenecks that impact competitive gaming.</p>
+            <p><strong>Technical Highlights:</strong></p>
+            <ul className="list-disc pl-5">
+              <li>Deep kernel-level tweaks for reduced input lag.</li>
+              <li>Aggressive process management to free up RAM.</li>
+              <li>Safe, registry-level optimizations for maximum FPS stability.</li>
+            </ul>
+            <p>This project showcases our ability to deliver high-performance software, reduce system latency, and enhance overall OS efficiency.</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Left: Image Slider */}
-            <div className="relative h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-cyan-500/20">
-              <AnimatePresence mode='wait'>
-                <motion.img
-                  key={currentImg}
-                  src={projectImages[currentImg]}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.8 }}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  alt="Featured Project"
-                />
-              </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {projectImages.map((_, index) => (
-                  <div key={index} className={`h-2 rounded-full transition-all duration-300 ${index === currentImg ? 'w-8 bg-cyan-400' : 'w-2 bg-white/50'}`} />
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Content with Typewriter Effect */}
-            <div className="space-y-6">
-              <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <h4 className="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">Success Story</h4>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-                  Innovative <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Enterprise Solution</span>
-                </h2>
-              </motion.div>
-
-              <motion.div variants={typewriterContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-gray-200 text-lg leading-relaxed max-w-xl min-h-[80px]">
-                {words.map((char, index) => (
-                  <motion.span key={index} variants={typewriterChild}>{char}</motion.span>
-                ))}
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="pt-6">
-                <Link to="/portfolio">
-                  <motion.button whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(34, 211, 238, 0.4)" }} className="bg-cyan-500 text-[#0a192f] px-10 py-4 rounded-xl font-black text-lg flex items-center gap-3">
-                    View Case Study <span className="text-2xl">→</span>
-                  </motion.button>
-                </Link>
-              </motion.div>
-            </div>
+          <a href="https://biglousoptimizations.com/" target="_blank" rel="noreferrer" className="mt-8 block text-center bg-cyan-500 text-[#0a192f] py-4 rounded-xl font-bold">
+            Download the Software
+          </a>
+        </motion.div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</section>
+ {/* --- Blogs Section --- */}
+<section className="py-24 bg-[#b5eef7] overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="text-center mb-16">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-5xl font-extrabold text-[#0a192f] tracking-tight mb-4"
+      >
+        <span className="text-cyan-600">Expert Insights</span> & Tech Trends 2026
+      </motion.h2>
+      
+      {/* Catchy Sub-heading */}
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="text-gray-600 max-w-2xl mx-auto text-lg"
+      >
+        Stay ahead with our latest analysis on software development, AI integration, and digital business transformation strategies.
+      </motion.p>
+    </div>
+    {/* Blog Grid (Top 2 Blogs) */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {blogData.slice(0, 2).map((blog) => (
+        <motion.div 
+          key={blog.id}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-100"
+        >
+          {/* Image */}
+          <div className="h-64 overflow-hidden">
+            <img 
+              src={blog.img} 
+              alt={blog.title} 
+              className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+            />
           </div>
-        </div>
-      </section>
+          
+          {/* Content */}
+          <div className="p-8">
+            <span className="text-cyan-600 font-bold text-xs uppercase tracking-widest">{blog.category}</span>
+            <h3 className="text-2xl font-bold text-[#0a192f] mt-2 mb-4 group-hover:text-cyan-600 transition">
+              {blog.title}
+            </h3>
+            <p className="text-gray-600 mb-6 line-clamp-3">{blog.excerpt}</p>
+            <Link to={`/blog/${blog.id}`} className="font-bold text-[#0a192f] hover:text-cyan-600 transition">
+              Read More &rarr;
+            </Link>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+<HowWeWork/>
       <Reviews/>
+      <FAQs/>
 {/* --- CALL TO ACTION (CTA) SECTION --- */}
 <section className="py-24 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a3c5a] relative overflow-hidden">
   
@@ -478,18 +589,19 @@ const Home = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight"
     >
-      Ready to start your <span className="text-cyan-400">Project?</span>
+      Ready to start your <span className="text-cyan-400">Digital Project?</span>
     </motion.h2>
 
-    {/* Short Description */}
+    {/* SEO-Rich Description */}
     <motion.p 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ delay: 0.3, duration: 0.8 }}
-      className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed"
+      className="text-gray-300 text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed"
     >
-      Let's build something extraordinary together. Our team is ready to transform your vision into a scalable digital reality.
+      New Tech Softs is a premier software house in Islamabad. We specialize in MERN stack development, custom mobile applications, and comprehensive digital solutions. 
+      Let's transform your vision into a scalable, high-performance digital reality together. Our expert team is ready to discuss your business goals.
     </motion.p>
 
     {/* Animated Button */}
@@ -508,22 +620,17 @@ const Home = () => {
           whileTap={{ scale: 0.95 }}
           className="group relative bg-cyan-500 text-[#0a192f] px-12 py-5 rounded-2xl font-black text-xl flex items-center gap-4 mx-auto transition-all duration-300"
         >
-          Let's Talk
-          <span className="text-2xl group-hover:translate-x-2 transition-transform duration-300">
-            &rarr;
-          </span>
+          Contact Our Experts &rarr;
         </motion.button>
       </Link>
     </motion.div>
 
   </div>
-
-  {/* Bottom subtle border/line */}
-  <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
 </section>
 
 
     </div>
+    
   );
 };
 
