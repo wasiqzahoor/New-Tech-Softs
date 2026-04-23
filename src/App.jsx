@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Components
@@ -33,6 +34,7 @@ const AnalyticsTracker = () => {
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <AnalyticsTracker />
       <ScrollToTop />
@@ -44,6 +46,7 @@ function App() {
         {/* Content Area - flex-grow ensure karega ke footer neeche rahe */}
         <main className="flex-grow">
           <Routes>
+            <Route path="*" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
@@ -62,6 +65,7 @@ function App() {
         <WhatsAppButton />
       </div>
     </Router>
+    </HelmetProvider>
   );
 }
 

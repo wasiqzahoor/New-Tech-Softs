@@ -91,6 +91,8 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         "addressLocality": "Islamabad",
         "addressCountry": "PK"
       },
+      "logo": "https://www.newtechsofts.com/logo.png", // Update this URL
+    "image": "https://www.newtechsofts.com/logo.png",
       "url": "https://www.newtechsofts.com/",
       "description": "Professional software house in Islamabad specializing in custom web apps and digital solutions."
     })}
