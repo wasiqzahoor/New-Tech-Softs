@@ -18,7 +18,7 @@ export const products = [
     name: "PDF SWIFT",
     image: "https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1777654550/logo_pop35v.png",
     details: "The ultimate PDF toolkit. Effortlessly merge, split, compress, and convert PDF files. A reliable and fast solution for document management.",
-    url: "https://pdfswifts.newtechsofts.com"
+    url: "https://pdfswift.newtechsofts.com"
   },
   {
     id: 4,
