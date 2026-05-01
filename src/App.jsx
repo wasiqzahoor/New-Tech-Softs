@@ -18,6 +18,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
+import ProductPage from './pages/Product';
 
 // --- Google Analytics Tracker ---
 const AnalyticsTracker = () => {
@@ -54,6 +55,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<PrivacyPolicy/>} />
             <Route path="/terms" element={<Terms/>} />
+            <Route path="/products" element={<ProductPage/>} />
+
             <Route path="/blog" element={<Blog/>} />
             <Route path="/blog/:id" element={<BlogDetail />} />
           </Routes>

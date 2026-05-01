@@ -39,6 +39,7 @@ const Navbar = () => {
             <NavLink to="/about" icon={<FaInfoCircle />} text="About" activeClass={isActive('/about')} />
             <NavLink to="/services" icon={<FaLaptopCode />} text="Services" activeClass={isActive('/services')} />
             <NavLink to="/portfolio" icon={<FaBriefcase />} text="Portfolio" activeClass={isActive('/portfolio')} />
+            <NavLink to="/products" icon={<FaBriefcase />} text="Products" activeClass={isActive('/products')} />
             <NavLink to="/blog" icon={<FaBlog />} text="Blog" activeClass={isActive('/blog')} />
             
             <Link to="/contact">
@@ -81,6 +82,7 @@ const Navbar = () => {
           <MobileLink to="/about" icon={<FaInfoCircle />} text="About Us" toggle={toggleMenu} activeClass={isActive('/about')} />
           <MobileLink to="/services" icon={<FaLaptopCode />} text="Services" toggle={toggleMenu} activeClass={isActive('/services')} />
           <MobileLink to="/portfolio" icon={<FaBriefcase />} text="Portfolio" toggle={toggleMenu} activeClass={isActive('/portfolio')} />
+          <MobileLink to="/products" icon={<FaBriefcase />} text="Products" toggle={toggleMenu} activeClass={isActive('/products')} />
           <MobileLink to="/blog" icon={<FaBlog />} text="Blog" toggle={toggleMenu} activeClass={isActive('/blog')} />
           
           {/* CTA Button at the Bottom of Drawer */}
