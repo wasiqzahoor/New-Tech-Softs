@@ -40,5 +40,12 @@ export const products = [
     image: "https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1777654714/logo_kxrnhj.png",
     details: "A comprehensive file transformation engine. Process, convert, and manage various file types within a single, unified interface for maximum efficiency.",
     url: "https://fileforge.newtechsofts.com"
-  }
+  },
+  {
+    "id": 7,
+    "name": "CODESNAP",
+    "image": "https://res.cloudinary.com/dwhj8qfca/image/upload/q_auto/f_auto/v1777993208/logo_n2ofip.png", 
+    "details": "Transform your code into stunning, professional-grade screenshots instantly. Features advanced syntax highlighting for 9+ languages, 3D tilt effects, and high-resolution exports in PNG, SVG, and WEBP formats. Perfect for sharing your work on social media or technical documentation.",
+    "url": "https://codesnap.newtechsofts.com"
+}
 ];
