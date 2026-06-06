@@ -6,6 +6,7 @@ import { motion,AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Reviews from '../components/Reviews';
 import { blogData } from '../data/blogData';
+import CEO from "../assets/team/CEO.png";
 import HowWeWork from '../components/HowWeWork';
 import FAQs from '../components/FAQs';
 // --- ANIMATION VARIANTS (Settings) ---
@@ -91,6 +92,18 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         "addressLocality": "Islamabad",
         "addressCountry": "PK"
       },
+      "founder": {
+      "@type": "Person",
+      "name": "CHAUDHARY WASIQ ZAHOOR",
+      "jobTitle": "CEO & Founder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "New Tech Softs"
+      },},
+      "sameAs": [
+        "https://www.linkedin.com/in/chaudhary-wasiq-zahoor-bbab952b0/",
+        "https://github.com/wasiqzahoor"
+      ],
       "logo": "https://www.newtechsofts.com/logo.png", // Update this URL
     "image": "https://www.newtechsofts.com/logo.png",
       "url": "https://www.newtechsofts.com/",
@@ -414,6 +427,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
     </motion.div>
   </div>
 </section>
+
     {/* --- Featured Projects --- */}
   <section className="py-24 bg-[#214769] overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -512,6 +526,131 @@ const [isModalOpen, setIsModalOpen] = useState(false);
     )}
   </AnimatePresence>
 </section>
+
+{/* --- FOUNDER SECTION --- */}
+<section className="py-24 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a3c5a] relative overflow-hidden">
+  
+  {/* Background Blobs */}
+  <div className="absolute top-[-80px] right-[-80px] w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div className="absolute bottom-[-60px] left-[-60px] w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <p className="text-cyan-400 font-bold tracking-widest uppercase text-sm mb-3">Meet the Visionary</p>
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+      >
+        The Mind Behind <span className="text-cyan-400">New Tech Softs</span>
+      </motion.h2>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      {/* Left: Image */}
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center gap-6"
+      >
+        {/* Photo Frame */}
+        <div className="relative w-64 h-80 rounded-3xl overflow-hidden border-2 border-cyan-500/30 shadow-2xl">
+          <img
+            src={CEO}
+            alt="CEO New Tech Softs"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a192f]/70 to-transparent"></div>
+        </div>
+
+        {/* Badge */}
+        <div className="bg-cyan-500 text-[#0a192f] px-6 py-2 rounded-full font-bold text-sm flex items-center gap-2">
+          <FaRocket /> CEO & Founder
+        </div>
+
+        {/* Stats */}
+        <div className="flex gap-4 w-full justify-center">
+          {[
+            { num: "5+", label: "Years Exp." },
+            { num: "100+", label: "Projects" },
+            { num: "50+", label: "Clients" },
+          ].map((s) => (
+            <div key={s.label} className="bg-white/5 border border-cyan-500/20 rounded-xl px-4 py-3 text-center flex-1">
+              <p className="text-cyan-400 text-xl font-bold">{s.num}</p>
+              <p className="text-gray-500 text-xs uppercase tracking-wider">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Right: Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="space-y-6"
+      >
+        <div>
+          <h3 className="text-4xl font-extrabold text-white">CHAUDHARY WASIQ ZAHOOR</h3>
+          <p className="text-cyan-400 font-bold uppercase tracking-widest text-sm mt-1">CEO & Founder, New Tech Softs</p>
+        </div>
+
+        <p className="text-gray-400 text-lg leading-relaxed">
+          A passionate software engineer and entrepreneur from Islamabad, I founded New Tech Softs with one mission — to transform bold ideas into powerful digital products that drive real business growth.
+        </p>
+
+        {/* Quote */}
+        <div className="border-l-4 border-cyan-500 pl-5 py-2 bg-cyan-500/5 rounded-r-xl">
+          <p className="text-gray-300 italic text-base leading-relaxed">
+            "Technology should solve real problems. At New Tech Softs, we don't just write code — we craft digital experiences that make a difference."
+          </p>
+        </div>
+
+        {/* Goals */}
+        <div>
+          <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+            <span className="w-1 h-5 bg-cyan-500 rounded-full inline-block"></span>
+            Goals & Vision
+          </h4>
+          <div className="space-y-3">
+            {[
+              { icon: <FaRocket />, text: "Build Pakistan's most trusted software house — delivering world-class solutions globally." },
+              { icon: <FaCode />, text: "Empower Pakistani startups with innovative, scalable, and affordable digital technology." },
+              { icon: <FaCheckCircle />, text: "Mentor the next generation of developers and create meaningful tech opportunities in Pakistan." },
+            ].map((goal, i) => (
+              <div key={i} className="flex items-start gap-3 text-gray-400 text-base">
+                <span className="text-cyan-400 mt-1">{goal.icon}</span>
+                <p>{goal.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex gap-3 flex-wrap pt-2">
+          {[
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/chaudhary-wasiq-zahoor-bbab952b0/" },
+            { label: "GitHub", href: "https://github.com/wasiqzahoor" },
+            { label: "Email", href: "mailto:info@newtechsofts.com" },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              className="border border-cyan-500/40 text-cyan-400 px-5 py-2 rounded-full text-sm font-semibold hover:bg-cyan-500 hover:text-[#0a192f] transition"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
  {/* --- Blogs Section --- */}
 <section className="py-24 bg-[#b5eef7] overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -572,6 +711,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
     </div>
   </div>
 </section>
+
 <HowWeWork/>
       <Reviews/>
       <FAQs/>

@@ -5,8 +5,8 @@ import { FaStar } from 'react-icons/fa';
 const reviewsData = [
     { name: "BigLou", role: "Software Optimizer", text: "New Tech Softs developed a robust Windows tweaking utility for us. The project delivery was flawless and the performance boost is significant.", rating: 5 },
     { name: "Lana Houts", role: "Podcast Host @ The AI Chicks", text: "The AI Chicks website and podcast platform built by New Tech Softs have exceeded our expectations. Their technical expertise is impressive.", rating: 5 },
-    { name: "Mudassir", role: "Fiverr Expert", text: "I've worked with many teams, but New Tech Softs stands out for their efficiency and top-notch code quality. Highly professional.", rating: 5 },
-    { name: "Usama Saqlain", role: "Small Business Owner @ Hekta Solutions", text: "New Tech Softs took our tech academy to the next level. Their custom web solutions perfectly fit our business requirements.", rating: 5 }
+    { name: "Mudassir", role: "Ceo & Founder of PrimeZtech", text: "I've worked with many teams, but New Tech Softs stands out for their efficiency and top-notch code quality. Highly professional.", rating: 5 },
+    { name: "Usama Saqlain", role: "Ceo & Founder of Hecta Ai Solutions", text: "New Tech Softs took our tech academy to the next level. Their custom web solutions perfectly fit our business requirements.", rating: 5 }
 ];
 
 const Reviews = () => {
