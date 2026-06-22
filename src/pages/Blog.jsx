@@ -1,12 +1,51 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { FaCalendarAlt, FaArrowRight, FaUserAlt,FaRocket, FaTag } from 'react-icons/fa';
 import { blogData } from '../data/blogData';
 
 const Blog = () => {
   return (
-    <div className="bg-[#0a192f] text-white min-h-screen pt-16 pb-20">
+    <div className="text-white min-h-screen pt-16 pb-20">
+      
+      <Helmet>
+        <title>Blog & Tech Insights | New Tech Softs - Software House in Islamabad</title>
+        <meta name="description" content="Read the latest tech insights, web development tips, AI trends, and software engineering guides from New Tech Softs - a leading software house in Islamabad." />
+        <meta name="keywords" content="tech blog, web development tips, AI trends, software engineering, React, Next.js, Python, MERN stack, Islamabad tech company, New Tech Softs blog" />
+        <meta name="author" content="New Tech Softs" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://newtechsofts.com/blog" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newtechsofts.com/blog" />
+        <meta property="og:title" content="Blog & Tech Insights | New Tech Softs" />
+        <meta property="og:description" content="Read the latest tech insights, web development tips, AI trends, and software engineering guides from New Tech Softs." />
+        <meta property="og:image" content="https://newtechsofts.com/logo.png" />
+        <meta property="og:site_name" content="New Tech Softs" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://newtechsofts.com/blog" />
+        <meta name="twitter:title" content="Blog & Tech Insights | New Tech Softs" />
+        <meta name="twitter:description" content="Read the latest tech insights, web development tips, AI trends, and software engineering guides from New Tech Softs." />
+        <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Blog & Tech Insights | New Tech Softs",
+            "description": "Latest tech insights, web development tips, and AI trends from New Tech Softs.",
+            "url": "https://newtechsofts.com/blog",
+            "publisher": {
+              "@type": "Organization",
+              "name": "New Tech Softs",
+              "logo": { "@type": "ImageObject", "url": "https://newtechsofts.com/logo.png" }
+            }
+          })}
+        </script>
+      </Helmet>
       
       {/* --- HERO SECTION --- */}
       <section className="text-center py-16 px-4">
@@ -69,7 +108,7 @@ const Blog = () => {
                 </p>
 
                 <div className="pt-6">
-                  <Link to={`/blog/${blog.id}`}>
+                  <Link to={`/blog/${blog.slug}`}>
                     <button className="flex items-center gap-3 text-cyan-400 font-black uppercase tracking-widest text-sm group-hover:gap-5 transition-all">
                       Read Full Article <FaArrowRight />
                     </button>

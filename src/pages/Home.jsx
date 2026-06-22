@@ -77,10 +77,29 @@ const [isModalOpen, setIsModalOpen] = useState(false);
  
   return (
     
-    <div className="bg-gray-50 overflow-hidden">
+    <div className="overflow-hidden">
        <Helmet>
   <title>Best Software House in Islamabad | New Tech Softs</title>
   <meta name="description" content="Looking for the top software house in Islamabad? New Tech Softs delivers custom web apps, professional web development, and digital solutions. Partner with a leading startup company today!" />
+  <meta name="keywords" content="software house Islamabad, web development, mobile app development, AI solutions, custom software, React, Next.js, Python, MERN stack, New Tech Softs, digital solutions Pakistan" />
+  <meta name="author" content="New Tech Softs" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://newtechsofts.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newtechsofts.com/" />
+  <meta property="og:title" content="Best Software House in Islamabad | New Tech Softs" />
+  <meta property="og:description" content="Looking for the top software house in Islamabad? New Tech Softs delivers custom web apps, professional web development, and digital solutions." />
+  <meta property="og:image" content="https://newtechsofts.com/logo.png" />
+  <meta property="og:site_name" content="New Tech Softs" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://newtechsofts.com/" />
+  <meta name="twitter:title" content="Best Software House in Islamabad | New Tech Softs" />
+  <meta name="twitter:description" content="Looking for the top software house in Islamabad? New Tech Softs delivers custom web apps, professional web development, and digital solutions." />
+  <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
+
 {/* JSON-LD Structured Data */}
   <script type="application/ld+json">
     {JSON.stringify({
@@ -104,7 +123,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         "https://www.linkedin.com/in/chaudhary-wasiq-zahoor-bbab952b0/",
         "https://github.com/wasiqzahoor"
       ],
-      "logo": "https://www.newtechsofts.com/logo.png", // Update this URL
+      "logo": "https://www.newtechsofts.com/logo.png",
     "image": "https://www.newtechsofts.com/logo.png",
       "url": "https://www.newtechsofts.com/",
       "description": "Professional software house in Islamabad specializing in custom web apps and digital solutions."
@@ -112,7 +131,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   </script>
 </Helmet>
       {/* --- HERO SECTION --- */}
-      <section className="relative bg-[#0a192f] text-white pt-32 pb-20 lg:pt-32 lg:pb-20 overflow-hidden">
+      <section className="relative text-white pt-32 pb-20 lg:pt-32 lg:pb-20 overflow-hidden">
         
         {/* Background Animation (Abstract Blobs) */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -227,54 +246,88 @@ const [isModalOpen, setIsModalOpen] = useState(false);
       </section>
 
       {/* --- TECH STACK STRIP (Infinite Slider) --- */}
-<div className="bg-[#112240] py-10 border-b border-gray-800 overflow-hidden relative">
-  <div className="max-w-7xl mx-auto px-4 mb-8">
-    <p className="text-center text-gray-500 text-sm font-semibold uppercase tracking-widest">
-      Technologies We Master
-    </p>
+<div className="py-20 border-b border-gray-800/50 overflow-hidden relative bg-gradient-to-b from-[#0a192f] via-[#112240] to-[#0a192f]">
+  
+  {/* Background Glow */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+  <div className="absolute top-1/4 left-1/4 w-[300px] h-[200px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+  <div className="max-w-7xl mx-auto px-4 mb-12 relative z-10">
+    <motion.p 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center text-cyan-400 text-sm font-bold uppercase tracking-[0.2em] mb-3"
+    >
+      Our Technology Stack
+    </motion.p>
+    <motion.h2 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2, duration: 0.6 }}
+      className="text-center text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+    >
+      Technologies We <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Master</span>
+    </motion.h2>
+    <motion.p 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.4, duration: 0.6 }}
+      className="text-center text-gray-400 mt-4 max-w-2xl mx-auto"
+    >
+      From cutting-edge frontends to robust backends — we build with the best.
+    </motion.p>
   </div>
 
   {/* Slider Container */}
-  <div className="relative w-full overflow-hidden">
-    {/* Left Gradient Fade (Smooth edges ke liye) */}
-    <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-[#112240] to-transparent z-10"></div>
+  <div className="relative w-full overflow-hidden py-8">
+    {/* Left Gradient Fade */}
+    <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-[#0a192f] to-transparent z-10"></div>
     {/* Right Gradient Fade */}
-    <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-[#112240] to-transparent z-10"></div>
+    <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-[#0a192f] to-transparent z-10"></div>
+
+    {/* Top Glow Line */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+    {/* Bottom Glow Line */}
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
 
     {/* Moving Track */}
-    <div className="flex gap-12 w-max animate-infinite-scroll hover:[animation-play-state:paused]">
+    <div className="flex gap-14 w-max animate-infinite-scroll hover:[animation-play-state:paused]">
       {/* Duplicate list twice for seamless loop */}
       {[...Array(2)].map((_, i) => (
-        <div key={i} className="flex gap-12 items-center">
+        <div key={i} className="flex gap-14 items-center px-4">
           {/* Frontend */}
-          <TechIcon icon={<FaReact />} color="text-cyan-400" name="React" />
-          <TechIcon icon={<SiNextdotjs />} color="text-white" name="Next.js" />
-          <TechIcon icon={<FaVuejs />} color="text-green-500" name="Vue.js" />
-          <TechIcon icon={<SiTailwindcss />} color="text-cyan-300" name="Tailwind" />
-          <TechIcon icon={<FaHtml5 />} color="text-orange-500" name="HTML5" />
-          <TechIcon icon={<FaCss3Alt />} color="text-blue-500" name="CSS3" />
-          <TechIcon icon={<FaJsSquare />} color="text-yellow-400" name="JavaScript" />
+          <TechIcon icon={<FaReact />} color="text-cyan-400" glow="#22d3ee" name="React" category="Frontend" />
+          <TechIcon icon={<SiNextdotjs />} color="text-white" glow="#ffffff" name="Next.js" category="Frontend" />
+          <TechIcon icon={<FaVuejs />} color="text-green-500" glow="#22c55e" name="Vue.js" category="Frontend" />
+          <TechIcon icon={<SiTailwindcss />} color="text-cyan-300" glow="#67e8f9" name="Tailwind" category="Frontend" />
+          <TechIcon icon={<FaHtml5 />} color="text-orange-500" glow="#f97316" name="HTML5" category="Frontend" />
+          <TechIcon icon={<FaCss3Alt />} color="text-blue-500" glow="#3b82f6" name="CSS3" category="Frontend" />
+          <TechIcon icon={<FaJsSquare />} color="text-yellow-400" glow="#facc15" name="JavaScript" category="Frontend" />
           
           {/* Backend */}
-          <TechIcon icon={<FaNodeJs />} color="text-green-500" name="Node.js" />
-          <TechIcon icon={<FaPhp />} color="text-purple-400" name="PHP" />
-          <TechIcon icon={<FaPython />} color="text-yellow-300" name="Python" />
-          <TechIcon icon={<FaJava />} color="text-red-500" name="Java" />
-          <TechIcon icon={<SiDjango />} color="text-green-800" name="Django" />
+          <TechIcon icon={<FaNodeJs />} color="text-green-500" glow="#22c55e" name="Node.js" category="Backend" />
+          <TechIcon icon={<FaPhp />} color="text-purple-400" glow="#c084fc" name="PHP" category="Backend" />
+          <TechIcon icon={<FaPython />} color="text-yellow-300" glow="#fde047" name="Python" category="Backend" />
+          <TechIcon icon={<FaJava />} color="text-red-500" glow="#ef4444" name="Java" category="Backend" />
+          <TechIcon icon={<SiDjango />} color="text-green-700" glow="#15803d" name="Django" category="Backend" />
 
           {/* Database */}
-          <TechIcon icon={<SiMongodb />} color="text-green-400" name="MongoDB" />
-          <TechIcon icon={<SiMysql />} color="text-blue-500" name="MySQL" />
-          <TechIcon icon={<SiPostgresql />} color="text-blue-300" name="PostgreSQL" />
-          <TechIcon icon={<SiFirebase />} color="text-yellow-500" name="Firebase" />
+          <TechIcon icon={<SiMongodb />} color="text-green-400" glow="#4ade80" name="MongoDB" category="Database" />
+          <TechIcon icon={<SiMysql />} color="text-blue-500" glow="#3b82f6" name="MySQL" category="Database" />
+          <TechIcon icon={<SiPostgresql />} color="text-blue-300" glow="#93c5fd" name="PostgreSQL" category="Database" />
+          <TechIcon icon={<SiFirebase />} color="text-yellow-500" glow="#eab308" name="Firebase" category="Database" />
 
           {/* Mobile & Tools */}
-          <TechIcon icon={<SiFlutter />} color="text-blue-400" name="Flutter" />
-          <TechIcon icon={<FaAndroid />} color="text-green-500" name="Android" />
-          <TechIcon icon={<FaSwift />} color="text-orange-500" name="Swift" />
-          <TechIcon icon={<FaAws />} color="text-orange-400" name="AWS" />
-          <TechIcon icon={<FaDocker />} color="text-blue-500" name="Docker" />
-          <TechIcon icon={<FaGitAlt />} color="text-red-500" name="Git" />
+          <TechIcon icon={<SiFlutter />} color="text-blue-400" glow="#60a5fa" name="Flutter" category="Mobile" />
+          <TechIcon icon={<FaAndroid />} color="text-green-500" glow="#22c55e" name="Android" category="Mobile" />
+          <TechIcon icon={<FaSwift />} color="text-orange-500" glow="#f97316" name="Swift" category="Mobile" />
+          <TechIcon icon={<FaAws />} color="text-orange-400" glow="#fb923c" name="AWS" category="Cloud" />
+          <TechIcon icon={<FaDocker />} color="text-blue-500" glow="#3b82f6" name="Docker" category="DevOps" />
+          <TechIcon icon={<FaGitAlt />} color="text-red-500" glow="#ef4444" name="Git" category="Tools" />
         </div>
       ))}
     </div>
@@ -282,7 +335,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 </div>
 {/* --- WHY CHOOSE US SECTION --- */}
 
-<section className="py-24 bg-[#0d2b45] relative overflow-hidden">
+<section className="py-24 relative overflow-hidden">
   
   {/* Background Pattern */}
   <div className="absolute top-0 right-0 opacity-20 pointer-events-none">
@@ -346,7 +399,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   </div>
 </section>
       {/* --- SERVICES PREVIEW (Cards) --- */}
-<section className="py-24 bg-[#1a3c5a] relative overflow-hidden">
+<section className="py-24 relative overflow-hidden">
   <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
     <div className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
     <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -429,7 +482,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 </section>
 
     {/* --- Featured Projects --- */}
-  <section className="py-24 bg-[#214769] overflow-hidden">
+  <section className="py-24 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-20">
       <motion.h2 
@@ -528,7 +581,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 </section>
 
 {/* --- FOUNDER SECTION --- */}
-<section className="py-24 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a3c5a] relative overflow-hidden">
+<section className="py-24 relative overflow-hidden">
   
   {/* Background Blobs */}
   <div className="absolute top-[-80px] right-[-80px] w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -652,7 +705,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   </div>
 </section>
  {/* --- Blogs Section --- */}
-<section className="py-24 bg-[#b5eef7] overflow-hidden">
+<section className="py-24 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div className="text-center mb-16">
@@ -702,7 +755,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
               {blog.title}
             </h3>
             <p className="text-gray-600 mb-6 line-clamp-3">{blog.excerpt}</p>
-            <Link to={`/blog/${blog.id}`} className="font-bold text-[#0a192f] hover:text-cyan-600 transition">
+            <Link to={`/blog/${blog.slug}`} className="font-bold text-[#0a192f] hover:text-cyan-600 transition">
               Read More &rarr;
             </Link>
           </div>
@@ -716,7 +769,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
       <Reviews/>
       <FAQs/>
 {/* --- CALL TO ACTION (CTA) SECTION --- */}
-<section className="py-24 bg-gradient-to-br from-[#0a192f] via-[#112240] to-[#1a3c5a] relative overflow-hidden">
+<section className="py-24 relative overflow-hidden">
   
   {/* Background Decorative Glow */}
   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -886,12 +939,25 @@ const ServiceCard = ({ icon, title, tagline, desc, direction, delay }) => {
     </motion.div>
   );
 };
-const TechIcon = ({ icon, color, name }) => (
-  <div className="flex flex-col items-center gap-2 group cursor-pointer">
-    <div className={`text-4xl ${color} opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-300`}>
-      {icon}
+const TechIcon = ({ icon, color, glow, name, category }) => (
+  <div className="flex flex-col items-center gap-3 group cursor-pointer">
+    <div 
+      className={`relative w-16 h-16 flex items-center justify-center rounded-2xl bg-[#112240]/80 border border-gray-700/50 text-3xl ${color} opacity-70 group-hover:opacity-100 group-hover:scale-110 group-hover:border-transparent transition-all duration-500`}
+      style={{ 
+        '--tw-shadow': `0 0 0 0 ${glow}00`,
+      }}
+    >
+      {/* Glow on hover */}
+      <div 
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl"
+        style={{ backgroundColor: glow }}
+      ></div>
+      <div className="relative z-10">{icon}</div>
     </div>
-    <span className="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition duration-300">{name}</span>
+    <span className="text-xs font-semibold text-gray-400 opacity-0 group-hover:opacity-100 group-hover:text-white transition-all duration-300 translate-y-[-4px] group-hover:translate-y-0">{name}</span>
+    {category && (
+      <span className="text-[10px] text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-wider">{category}</span>
+    )}
   </div>
 );
 

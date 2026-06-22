@@ -35,10 +35,28 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-[#0a192f] text-white min-h-screen pt-24 pb-12 overflow-hidden">
+    <div className="text-white min-h-screen pt-24 pb-12 overflow-hidden">
       <Helmet>
   <title>About New Tech Softs | Our Mission, Vision & Team</title>
   <meta name="description" content="Learn more about New Tech Softs, a leading software house in Islamabad. Discover our mission, our professional team, and how we deliver innovative software solutions." />
+  <meta name="keywords" content="about New Tech Softs, software house Islamabad, our team, mission, vision, IT company Pakistan, web development company" />
+  <meta name="author" content="New Tech Softs" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://newtechsofts.com/about" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newtechsofts.com/about" />
+  <meta property="og:title" content="About New Tech Softs | Our Mission, Vision & Team" />
+  <meta property="og:description" content="Learn more about New Tech Softs, a leading software house in Islamabad. Discover our mission, our professional team, and how we deliver innovative software solutions." />
+  <meta property="og:image" content="https://newtechsofts.com/logo.png" />
+  <meta property="og:site_name" content="New Tech Softs" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://newtechsofts.com/about" />
+  <meta name="twitter:title" content="About New Tech Softs | Our Mission, Vision & Team" />
+  <meta name="twitter:description" content="Learn more about New Tech Softs, a leading software house in Islamabad. Discover our mission, our professional team, and how we deliver innovative software solutions." />
+  <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
 </Helmet>
       {/* --- SECTION 1: WHO WE ARE (Modern & Persuasive) --- */}
  <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
@@ -171,7 +189,7 @@ const About = () => {
       
      
 {/* SECTION 4: OUR DEVELOPMENT PROCESS */}
-       <section className="py-24 bg-[#112240]/30 relative overflow-hidden">
+       <section className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2 

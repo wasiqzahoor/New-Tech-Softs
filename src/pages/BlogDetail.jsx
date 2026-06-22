@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { 
   FaCalendarAlt, FaUserAlt, FaArrowLeft, FaTag, 
   FaLinkedin, FaTwitter, FaFacebook, FaRocket 
@@ -19,13 +20,13 @@ const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUr
 
 // Twitter (X) Share Link (Extra Suggestion)
 const twitterShareUrl = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${blogTitle}`;
-  const { id } = useParams();
-  const blog = blogData.find((b) => b.id === parseInt(id));
+  const { slug } = useParams();
+  const blog = blogData.find((b) => b.slug === slug);
 
   // Agar blog na miley
   if (!blog) {
     return (
-      <div className="bg-[#0a192f] text-white min-h-screen flex items-center justify-center">
+      <div className="text-white min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Article Not Found</h2>
           <Link to="/blog" className="text-cyan-400 hover:underline">Back to Blogs</Link>
@@ -38,7 +39,49 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?url=${shareUrl}&text=$
   const recentPosts = blogData.filter(b => b.id !== blog.id).slice(0, 3);
 
   return (
-    <div className="bg-[#0a192f] text-white min-h-screen pt-32 pb-20">
+    <div className="text-white min-h-screen pt-32 pb-20">
+      <Helmet>
+        <title>{blog.title} | New Tech Softs Blog</title>
+        <meta name="description" content={blog.excerpt || blog.title + ' - Read this article by New Tech Softs, a leading software house in Islamabad.'} />
+        <meta name="keywords" content={`${blog.category || 'tech'}, web development, software house Islamabad, New Tech Softs`} />
+        <meta name="author" content={blog.author || 'New Tech Softs'} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://newtechsofts.com/blog/${blog.slug}`} />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://newtechsofts.com/blog/${blog.slug}`} />
+        <meta property="og:title" content={`${blog.title} | New Tech Softs`} />
+        <meta property="og:description" content={blog.excerpt || blog.title} />
+        <meta property="og:image" content={blog.img || 'https://newtechsofts.com/logo.png'} />
+        <meta property="og:site_name" content="New Tech Softs" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="article:published_time" content={blog.date} />
+        <meta property="article:author" content={blog.author || 'New Tech Softs'} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={`https://newtechsofts.com/blog/${blog.slug}`} />
+        <meta name="twitter:title" content={`${blog.title} | New Tech Softs`} />
+        <meta name="twitter:description" content={blog.excerpt || blog.title} />
+        <meta name="twitter:image" content={blog.img || 'https://newtechsofts.com/logo.png'} />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": blog.title,
+            "description": blog.excerpt || blog.title,
+            "image": blog.img || 'https://newtechsofts.com/logo.png',
+            "author": { "@type": "Person", "name": blog.author || 'New Tech Softs' },
+            "publisher": {
+              "@type": "Organization",
+              "name": "New Tech Softs",
+              "logo": { "@type": "ImageObject", "url": "https://newtechsofts.com/logo.png" }
+            },
+            "datePublished": blog.date,
+            "url": `https://newtechsofts.com/blog/${blog.slug}`
+          })}
+        </script>
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* --- BREADCRUMBS & BACK BUTTON --- */}
@@ -147,7 +190,7 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?url=${shareUrl}&text=$
               <h3 className="text-white font-black uppercase text-sm tracking-widest mb-6">Recent Insights</h3>
               <div className="space-y-6">
                 {recentPosts.map((post) => (
-                  <Link key={post.id} to={`/blog/${post.id}`} className="group flex gap-4 items-center">
+                  <Link key={post.id} to={`/blog/${post.slug}`} className="group flex gap-4 items-center">
                     <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
                       <img src={post.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform" alt="" />
                     </div>

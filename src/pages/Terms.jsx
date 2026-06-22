@@ -1,10 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { FaFileContract, FaCreditCard, FaCode, FaTools, FaGavel, FaExclamationTriangle } from 'react-icons/fa';
 
 const Terms = () => {
   return (
-    <div className="bg-[#0a192f] text-white min-h-screen pt-32 pb-20 overflow-hidden">
+    <div className="text-white min-h-screen pt-32 pb-20 overflow-hidden">
+      
+      <Helmet>
+        <title>Terms of Service | New Tech Softs</title>
+        <meta name="description" content="Read the Terms of Service for New Tech Softs. Understand the rules, guidelines, and conditions for using our software development and IT services." />
+        <meta name="keywords" content="terms of service, terms and conditions, New Tech Softs, software house Islamabad, IT services" />
+        <meta name="author" content="New Tech Softs" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://newtechsofts.com/terms" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newtechsofts.com/terms" />
+        <meta property="og:title" content="Terms of Service | New Tech Softs" />
+        <meta property="og:description" content="Read the Terms of Service for New Tech Softs. Understand the rules and conditions for using our services." />
+        <meta property="og:image" content="https://newtechsofts.com/logo.png" />
+        <meta property="og:site_name" content="New Tech Softs" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://newtechsofts.com/terms" />
+        <meta name="twitter:title" content="Terms of Service | New Tech Softs" />
+        <meta name="twitter:description" content="Read the Terms of Service for New Tech Softs. Understand the rules and conditions for using our services." />
+        <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
+      </Helmet>
       
       {/* --- HERO HEADER --- */}
       <section className="max-w-4xl mx-auto px-6 text-center mb-20">

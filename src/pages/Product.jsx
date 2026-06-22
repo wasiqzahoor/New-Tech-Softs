@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { products } from '../data/productData';
 import { Helmet } from 'react-helmet-async';
 /* ─── Animated Counter Hook ─────────────────────────────────── */
@@ -221,7 +222,6 @@ const ProductPage = () => {
 
         .pp-root {
           font-family: var(--font-body);
-          background: var(--c-bg);
           color: var(--c-text);
           min-height: 100vh;
           overflow-x: hidden;
@@ -822,44 +822,180 @@ const ProductPage = () => {
 
       <div className="pp-root">
         {/* Hero Section */}
-        <section className="pp-hero">
-          <div className="pp-hero-grid" />
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="pp-hero-eyebrow">NewTechSofts Product Suite</div>
-            <h1 className="pp-hero-title">
-              Powerful Software<br />
-              <span>Built to Scale</span>
-            </h1>
-            <p className="pp-hero-sub">
-              Explore our curated collection of industry-leading software tools — from
-              development platforms to productivity suites, crafted for modern teams.
-            </p>
+        <section className="relative text-white pt-28 pb-12 lg:pt-28 lg:pb-16 overflow-hidden">
+          
+          {/* Background Animation (Abstract Blobs) */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl"></div>
+          </div>
 
-            <div className="pp-search-wrap">
-              <svg className="pp-search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M13 13l2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-              <input
-                type="text"
-                className="pp-search"
-                placeholder="Search products..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              {searchTerm && (
-                <button className="pp-search-clear" onClick={() => setSearchTerm('')} aria-label="Clear search">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                </button>
-              )}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              
+              {/* Left Content */}
+              <div className="text-center lg:text-left">
+                
+                {/* Welcome Badge */}
+                <motion.div 
+                  className="text-cyan-400 font-bold tracking-widest uppercase text-base lg:text-lg mb-4 flex flex-wrap justify-center lg:justify-start gap-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+                >
+                  {"Our Products".split(" ").map((word, index) => (
+                    <motion.span key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 100, delay: 0.3 + index * 0.1 }}>{word}</motion.span>
+                  ))}
+                </motion.div>
+
+                {/* Main Heading - Word by Word Animation */}
+                <motion.h1 
+                  className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+                >
+                  {"Powerful Software".split(" ").map((word, index) => (
+                    <motion.span key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 100, delay: 0.4 + index * 0.1 }}>{word}</motion.span>
+                  ))}
+                  <motion.span 
+                    initial={{ opacity: 0, y: 20 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
+                  >
+                    Built to Scale
+                  </motion.span>
+                </motion.h1>
+
+                {/* Short Description */}
+                <motion.p 
+                  className="text-gray-400 text-lg lg:text-xl mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                >
+                  Explore our curated collection of industry-leading software tools — from development platforms to productivity suites, crafted for modern teams.
+                </motion.p>
+                
+                {/* Search + Buttons */}
+                <motion.div 
+                  className="flex flex-col gap-4"
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 10, delay: 1.2 }}
+                >
+                  {/* Search Bar */}
+                  <div className="relative max-w-md mx-auto lg:mx-0">
+                    <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M13 13l2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                    <input
+                      type="text"
+                      className="w-full pl-12 pr-10 py-3.5 bg-[#112240]/80 border border-gray-700 rounded-full text-white placeholder-gray-500 focus:border-cyan-400 focus:outline-none transition-all text-sm"
+                      placeholder="Search products..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    {searchTerm && (
+                      <button className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition" onClick={() => setSearchTerm('')}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                      </button>
+                    )}
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#products" className="w-full sm:w-auto bg-cyan-500 text-[#0a192f] px-8 py-3.5 rounded-full font-bold text-lg hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 text-center">
+                      View Products
+                    </a>
+                    <Link to="/contact">
+                      <button className="w-full sm:w-auto border-2 border-gray-600 text-gray-300 px-8 py-3.5 rounded-full font-bold text-lg hover:border-cyan-400 hover:text-cyan-400 transition flex items-center justify-center gap-2">
+                        Get a Quote
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Visual - Floating Product Cards */}
+              <motion.div 
+                className="relative hidden lg:flex items-center justify-center h-[380px]"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <div className="relative w-full h-full">
+                  
+                  {/* Card 1 - Dev Tools */}
+                  <motion.div 
+                    className="absolute top-0 left-0 bg-[#112240]/90 backdrop-blur-sm p-5 rounded-2xl border border-gray-700 shadow-xl flex items-center gap-4 hover:border-cyan-500/50 transition-all"
+                    animate={{ y: [0, -12, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="1.5" strokeLinecap="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-sm">CodeFlow IDE</p>
+                      <p className="text-gray-500 text-xs">Dev Tools, Productivity</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 2 - Design Tool */}
+                  <motion.div 
+                    className="absolute top-8 right-0 bg-[#112240]/90 backdrop-blur-sm p-5 rounded-2xl border border-gray-700 shadow-xl flex items-center gap-4 hover:border-cyan-500/50 transition-all"
+                    animate={{ y: [0, 12, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  >
+                    <div className="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-sm">DesignStudio</p>
+                      <p className="text-gray-500 text-xs">Design, UI/UX</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 3 - Cloud Platform */}
+                  <motion.div 
+                    className="absolute bottom-20 left-4 bg-[#112240]/90 backdrop-blur-sm p-5 rounded-2xl border border-gray-700 shadow-xl flex items-center gap-4 hover:border-cyan-500/50 transition-all"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  >
+                    <div className="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" strokeWidth="1.5" strokeLinecap="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-sm">CloudDeploy</p>
+                      <p className="text-gray-500 text-xs">Cloud, DevOps</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Card 4 - Analytics */}
+                  <motion.div 
+                    className="absolute bottom-8 right-8 bg-[#112240]/90 backdrop-blur-sm p-5 rounded-2xl border border-gray-700 shadow-xl flex items-center gap-4 hover:border-cyan-500/50 transition-all"
+                    animate={{ y: [0, 15, 0] }}
+                    transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                  >
+                    <div className="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-sm">DataPulse</p>
+                      <p className="text-gray-500 text-xs">Analytics, Productivity</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Center Glow */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl"></div>
+
+                </div>
+              </motion.div>
+
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Stats Row */}
@@ -884,7 +1020,7 @@ const ProductPage = () => {
         </div> */}
 
         {/* Product Grid */}
-        <h1 className='product-h1'>Our Products</h1>
+        <h1 id="products" className='product-h1'>Our Products</h1>
         <section className="pp-grid-section">
           <p className="pp-grid-count">
             {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''} found
@@ -916,64 +1052,153 @@ const ProductPage = () => {
         </section>
 
         {/* About Section */}
-        <section className="pp-about">
-          <div className="pp-about-inner">
-            <span className="pp-section-tag">About NewTechSofts</span>
-            <h2 className="pp-section-title">Engineering Excellence,<br />Delivered.</h2>
-            <p className="pp-about-text">
-              We are a premier software house based in Islamabad, dedicated to delivering
-              precision-engineered digital solutions. Every product we build is designed with
-              performance, scalability, and exceptional user experience at the core.
-            </p>
-            <div className="pp-features">
+        <section className="relative py-24 px-4 overflow-hidden">
+          
+          {/* Background Decorations */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+          <div className="max-w-5xl mx-auto relative z-10">
+            
+            {/* Section Header */}
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div
+                className="text-cyan-400 font-bold tracking-widest uppercase text-sm mb-4 flex justify-center gap-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                {"About NewTechSofts".split(" ").map((word, i) => (
+                  <motion.span 
+                    key={i}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + i * 0.08 }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.div>
+
+              <motion.h2 
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                <span className="text-white">Engineering</span>{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Excellence,</span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Delivered.</span>
+              </motion.h2>
+
+              <motion.p 
+                className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+              >
+                We are a premier software house based in Islamabad, dedicated to delivering
+                precision-engineered digital solutions. Every product we build is designed with
+                performance, scalability, and exceptional user experience at the core.
+              </motion.p>
+            </motion.div>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   title: 'Custom Development',
                   text: 'Tailored software built around your exact requirements.',
+                  color: '#60a5fa',
+                  gradient: 'from-blue-400 to-cyan-400',
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M3 12l3-3 3 3 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
                     </svg>
                   )
                 },
                 {
                   title: 'Cloud-Ready',
-                  text: 'Scalable infrastructure designed for modern cloud environments.',
+                  text: 'Scalable infrastructure for modern cloud environments.',
+                  color: '#22d3ee',
+                  gradient: 'from-cyan-400 to-teal-400',
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M14 11a4 4 0 10-5.66-5.66A3 3 0 104.5 11H14z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>
                     </svg>
                   )
                 },
                 {
                   title: '24/7 Support',
                   text: 'Round-the-clock technical support for all our products.',
+                  color: '#a78bfa',
+                  gradient: 'from-purple-400 to-violet-400',
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <circle cx="9" cy="9" r="6.5" stroke="currentColor" strokeWidth="1.5"/>
-                      <path d="M9 5.5v4l2.5 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
                     </svg>
                   )
                 },
                 {
                   title: 'Secure by Design',
                   text: 'Enterprise-grade security baked into every layer.',
+                  color: '#34d399',
+                  gradient: 'from-emerald-400 to-green-400',
                   icon: (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M9 2L3 5v4c0 3.5 2.5 6.5 6 7.5 3.5-1 6-4 6-7.5V5L9 2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
                   )
                 },
-              ].map((f) => (
+              ].map((f, i) => (
                 <motion.div
                   key={f.title}
-                  className="pp-feature"
-                  whileHover={{ borderColor: 'rgba(99,168,255,0.3)', y: -3 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.12, type: "spring", stiffness: 80 }}
+                  whileHover={{ y: -8, boxShadow: `0 20px 40px ${f.color}20` }}
+                  className="group relative bg-[#112240]/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-7 hover:border-transparent transition-all duration-500 cursor-default overflow-hidden"
                 >
-                  <div className="pp-feature-icon">{f.icon}</div>
-                  <div className="pp-feature-title">{f.title}</div>
-                  <div className="pp-feature-text">{f.text}</div>
+                  {/* Glow on hover */}
+                  <div 
+                    className="absolute -top-16 -right-16 w-32 h-32 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"
+                    style={{ backgroundColor: f.color }}
+                  ></div>
+
+                  {/* Icon */}
+                  <motion.div 
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${f.gradient} flex items-center justify-center text-white mb-5 shadow-lg`}
+                    style={{ boxShadow: `0 8px 20px ${f.color}30` }}
+                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {f.icon}
+                  </motion.div>
+
+                  {/* Content */}
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-all">
+                    {f.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                    {f.text}
+                  </p>
+
+                  {/* Bottom accent line */}
+                  <div 
+                    className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r ${f.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  ></div>
                 </motion.div>
               ))}
             </div>

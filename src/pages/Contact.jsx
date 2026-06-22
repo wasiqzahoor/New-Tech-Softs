@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 import { 
   FaEnvelope, FaWhatsapp, FaMapMarkerAlt, FaLinkedin, 
@@ -52,7 +53,46 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#0a192f] text-white min-h-screen pt-24 pb-12 overflow-hidden">
+    <div className="text-white min-h-screen pt-24 pb-12 overflow-hidden">
+      
+      <Helmet>
+        <title>Contact Us | New Tech Softs - Software House in Islamabad</title>
+        <meta name="description" content="Get in touch with New Tech Softs, a leading software house in Islamabad. Contact us for web development, mobile app development, AI solutions, and custom software projects." />
+        <meta name="keywords" content="contact, software house Islamabad, web development, mobile app development, AI solutions, custom software, New Tech Softs contact" />
+        <meta name="author" content="New Tech Softs" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://newtechsofts.com/contact" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newtechsofts.com/contact" />
+        <meta property="og:title" content="Contact Us | New Tech Softs" />
+        <meta property="og:description" content="Get in touch with New Tech Softs for web development, mobile apps, AI solutions, and custom software projects." />
+        <meta property="og:image" content="https://newtechsofts.com/logo.png" />
+        <meta property="og:site_name" content="New Tech Softs" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://newtechsofts.com/contact" />
+        <meta name="twitter:title" content="Contact Us | New Tech Softs" />
+        <meta name="twitter:description" content="Get in touch with New Tech Softs for web development, mobile apps, AI solutions, and custom software projects." />
+        <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Us | New Tech Softs",
+            "description": "Get in touch with New Tech Softs for web development, mobile apps, AI solutions, and custom software projects.",
+            "url": "https://newtechsofts.com/contact",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "New Tech Softs",
+              "address": { "@type": "PostalAddress", "addressLocality": "Islamabad", "addressCountry": "PK" },
+              "email": "info@newtechsofts.com"
+            }
+          })}
+        </script>
+      </Helmet>
       
       {/* --- 1. HERO SECTION (Clean & Text Focused) --- */}
       <section className="text-center py-16 px-4">

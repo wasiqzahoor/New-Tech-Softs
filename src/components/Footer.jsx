@@ -41,7 +41,7 @@ const Footer = () => {
     }, 1000); // 1 sec ka fake loading effect taake real lage
   };
   return (
-    <footer className="bg-[#1A1A99] text-[#D3D3D3] pt-16 pb-8 border-t border-gray-800">
+    <footer className="bg-[#1A1A99] text-[#D3D3D3] pt-16 pb-8 border-t border-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Section: 4 Columns */}

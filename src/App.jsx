@@ -13,6 +13,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
+import ProjectDetail from './pages/ProjectDetail';
+import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
@@ -41,7 +43,7 @@ function App() {
       <ScrollToTop />
       
       {/* Main Container */}
-      <div className="flex flex-col min-h-screen bg-gray-50 relative">
+      <div className="flex flex-col min-h-screen relative">
         <Navbar />
 
         {/* Content Area - flex-grow ensure karega ke footer neeche rahe */}
@@ -52,13 +54,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/project/:slug" element={<ProjectDetail />} />
+            <Route path="/service/:slug" element={<ServiceDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<PrivacyPolicy/>} />
             <Route path="/terms" element={<Terms/>} />
             <Route path="/products" element={<ProductPage/>} />
 
             <Route path="/blog" element={<Blog/>} />
-            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
           </Routes>
         </main>
 

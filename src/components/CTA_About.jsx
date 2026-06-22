@@ -60,7 +60,7 @@ const StatCard = ({ num, label, delay }) => (
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 const CTASection = () => {
   return (
-    <section className="relative py-24 px-4 bg-[#0a192f] overflow-hidden">
+    <section className="relative py-24 px-4 overflow-hidden">
 
       {/* ── Background grid ── */}
       <div

@@ -66,33 +66,36 @@ const Navbar = () => {
       ></div>
 
       {/* 2. Side Drawer Container */}
-      <div className={`fixed top-0 right-0 h-screen w-[280px] bg-[#112240] shadow-2xl transition-transform duration-300 ease-in-out z-[110] md:hidden transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-screen w-[280px] bg-[#112240] shadow-2xl transition-transform duration-300 ease-in-out z-[110] md:hidden transform flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         
         {/* Drawer Header (Close Button) */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-800">
-          <span className="text-cyan-400 font-bold tracking-widest text-sm uppercase">NEW TECH SOFTS</span>
+        <div className="flex justify-between items-center p-6 border-b border-gray-800 flex-shrink-0">
+          <span className="text-cyan-400 font-bold tracking-widest text-sm uppercase">Menu</span>
           <button onClick={toggleMenu} className="text-white text-2xl hover:text-red-500 transition-colors">
             <FaTimes />
           </button>
         </div>
 
         {/* Drawer Links */}
-        <div className="flex flex-col space-y-2 p-6 overflow-y-auto">
+        <div className="flex flex-col space-y-2 p-6 overflow-y-auto flex-grow">
           <MobileLink to="/" icon={<FaHome />} text="Home" toggle={toggleMenu} activeClass={isActive('/')} />
           <MobileLink to="/about" icon={<FaInfoCircle />} text="About Us" toggle={toggleMenu} activeClass={isActive('/about')} />
           <MobileLink to="/services" icon={<FaLaptopCode />} text="Services" toggle={toggleMenu} activeClass={isActive('/services')} />
           <MobileLink to="/portfolio" icon={<FaBriefcase />} text="Portfolio" toggle={toggleMenu} activeClass={isActive('/portfolio')} />
           <MobileLink to="/products" icon={<FaBriefcase />} text="Products" toggle={toggleMenu} activeClass={isActive('/products')} />
           <MobileLink to="/blog" icon={<FaBlog />} text="Blog" toggle={toggleMenu} activeClass={isActive('/blog')} />
-          
-          {/* CTA Button at the Bottom of Drawer */}
-          <div className="pt-10">
-            <Link to="/contact" onClick={toggleMenu}>
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-xl font-bold shadow-xl hover:shadow-cyan-500/40 active:scale-95 transition-all">
-                Get Started Now
-              </button>
-            </Link>
-            <p className="text-gray-500 text-xs text-center mt-6 uppercase tracking-widest">New Tech Softs</p>
+        </div>
+
+        {/* Bottom Section - Button & Logo */}
+        <div className="p-6 border-t border-gray-800 flex-shrink-0 space-y-4">
+          <Link to="/contact" onClick={toggleMenu}>
+            <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-xl font-bold shadow-xl hover:shadow-cyan-500/40 active:scale-95 transition-all">
+              Get Started Now
+            </button>
+          </Link>
+          <div className="flex items-center justify-center gap-2">
+            <img src={logo} alt="New Tech Softs" className="h-6 w-auto" />
+            <span className="text-gray-500 text-xs uppercase tracking-widest font-semibold">New Tech Softs</span>
           </div>
         </div>
       </div>

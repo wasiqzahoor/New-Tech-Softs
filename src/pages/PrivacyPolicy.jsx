@@ -1,10 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { FaShieldAlt, FaLock, FaUserShield, FaDatabase, FaGlobe, FaFileContract } from 'react-icons/fa';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-[#0a192f] text-white min-h-screen pt-32 pb-20 overflow-hidden">
+    <div className="text-white min-h-screen pt-32 pb-20 overflow-hidden">
+      
+      <Helmet>
+        <title>Privacy Policy | New Tech Softs</title>
+        <meta name="description" content="Read the Privacy Policy of New Tech Softs. Learn how we collect, use, and protect your personal data when you use our software development services." />
+        <meta name="keywords" content="privacy policy, data protection, New Tech Softs, software house Islamabad, GDPR" />
+        <meta name="author" content="New Tech Softs" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://newtechsofts.com/privacy" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://newtechsofts.com/privacy" />
+        <meta property="og:title" content="Privacy Policy | New Tech Softs" />
+        <meta property="og:description" content="Read the Privacy Policy of New Tech Softs. Learn how we collect, use, and protect your personal data." />
+        <meta property="og:image" content="https://newtechsofts.com/logo.png" />
+        <meta property="og:site_name" content="New Tech Softs" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://newtechsofts.com/privacy" />
+        <meta name="twitter:title" content="Privacy Policy | New Tech Softs" />
+        <meta name="twitter:description" content="Read the Privacy Policy of New Tech Softs. Learn how we collect, use, and protect your personal data." />
+        <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
+      </Helmet>
       
       {/* --- HERO HEADER --- */}
       <section className="max-w-4xl mx-auto px-6 text-center mb-20">
