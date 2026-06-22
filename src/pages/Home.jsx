@@ -104,29 +104,40 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "SoftwareBusiness",
+      "@type": "WebSite",
       "name": "New Tech Softs",
+      "url": "https://www.newtechsofts.com/",
+      "description": "Professional software house in Islamabad specializing in custom web apps and digital solutions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "New Tech Softs",
+        "logo": { "@type": "ImageObject", "url": "https://www.newtechsofts.com/logo.png" }
+      }
+    })}
+  </script>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "New Tech Softs",
+      "url": "https://www.newtechsofts.com/",
+      "logo": "https://www.newtechsofts.com/logo.png",
+      "image": "https://www.newtechsofts.com/logo.png",
+      "description": "Professional software house in Islamabad specializing in custom web apps and digital solutions.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Islamabad",
         "addressCountry": "PK"
       },
       "founder": {
-      "@type": "Person",
-      "name": "CHAUDHARY WASIQ ZAHOOR",
-      "jobTitle": "CEO & Founder",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "New Tech Softs"
-      },},
+        "@type": "Person",
+        "name": "Chaudhary Wasiq Zahoor",
+        "jobTitle": "CEO & Founder"
+      },
       "sameAs": [
         "https://www.linkedin.com/in/chaudhary-wasiq-zahoor-bbab952b0/",
         "https://github.com/wasiqzahoor"
-      ],
-      "logo": "https://www.newtechsofts.com/logo.png",
-    "image": "https://www.newtechsofts.com/logo.png",
-      "url": "https://www.newtechsofts.com/",
-      "description": "Professional software house in Islamabad specializing in custom web apps and digital solutions."
+      ]
     })}
   </script>
 </Helmet>
