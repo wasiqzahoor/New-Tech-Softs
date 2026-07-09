@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
-import image1 from "../assets/team/image1.jpg";
-import image2 from "../assets/team/image2.png";
+import image1 from "../assets/team/image1.webp";
+import image2 from "../assets/team/image2.webp";
 import image3 from "../assets/team/image3.png";
 import image4 from "../assets/team/image4.png";
 import image5 from "../assets/team/image5.png";
-import image6 from "../assets/team/image6.png";
-import CEO from "../assets/team/CEO.png";
+import image6 from "../assets/team/image6.webp";
+import CEO from "../assets/team/CEO.webp";
 import {
   FaUserTie,
   FaProjectDiagram,
