@@ -45,6 +45,8 @@ const Blog = () => {
             }
           })}
         </script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4740706812082938"
+     crossorigin="anonymous"></script>
       </Helmet>
       
       {/* --- HERO SECTION --- */}

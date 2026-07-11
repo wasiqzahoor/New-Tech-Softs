@@ -115,6 +115,8 @@ const [isModalOpen, setIsModalOpen] = useState(false);
       }
     })}
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4740706812082938"
+     crossorigin="anonymous"></script>
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
