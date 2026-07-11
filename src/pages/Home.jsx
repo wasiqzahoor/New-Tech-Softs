@@ -6,7 +6,7 @@ import { motion,AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Reviews from '../components/Reviews';
 import { blogData } from '../data/blogData';
-import CEO from "../assets/team/CEO.png";
+import CEO from "../assets/team/CEO.webp";
 import HowWeWork from '../components/HowWeWork';
 import FAQs from '../components/FAQs';
 // --- ANIMATION VARIANTS (Settings) ---
