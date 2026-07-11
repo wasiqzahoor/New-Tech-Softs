@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     Sitemap({
       hostname: 'https://newtechsofts.com', // Apni website ka link
-      dynamicRoutes: ['/about', '/services', '/blog','portfolio','/blog/1','/blog/2','/blog/3','/blog/4','/blog/5'], // Agar dynamic pages hain
+      dynamicRoutes: ['/about', '/services', '/blog','/portfolio','/blog/1','/blog/2','/blog/3','/blog/4','/blog/5'], // Agar dynamic pages hain
     })
   ]
 })
