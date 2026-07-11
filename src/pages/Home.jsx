@@ -99,7 +99,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   <meta name="twitter:title" content="Best Software House in Islamabad | New Tech Softs" />
   <meta name="twitter:description" content="Looking for the top software house in Islamabad? New Tech Softs delivers custom web apps, professional web development, and digital solutions." />
   <meta name="twitter:image" content="https://newtechsofts.com/logo.png" />
-
+  <meta name="google-adsense-account" content="ca-pub-4740706812082938"></meta>
 {/* JSON-LD Structured Data */}
   <script type="application/ld+json">
     {JSON.stringify({

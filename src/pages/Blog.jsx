@@ -15,6 +15,7 @@ const Blog = () => {
         <meta name="keywords" content="tech blog, web development tips, AI trends, software engineering, React, Next.js, Python, MERN stack, Islamabad tech company, New Tech Softs blog" />
         <meta name="author" content="New Tech Softs" />
         <meta name="robots" content="index, follow" />
+        <meta name="google-adsense-account" content="ca-pub-4740706812082938"></meta>
         <link rel="canonical" href="https://newtechsofts.com/blog" />
 
         <meta property="og:type" content="website" />
